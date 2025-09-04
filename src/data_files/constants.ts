@@ -42,7 +42,7 @@ export const partnersData = [
   {
     icon: `<img src="/imagenes/lacolada-white.webp"
                 alt="La Colada"
-                class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"
+                class="mx-auto h-auto w-64 py-3 sm:mx-0 lg:w-40 lg:py-5"
                 width="240" height="80"
                 loading="lazy" decoding="async" />`,
     name: "La Colada",
@@ -51,23 +51,23 @@ export const partnersData = [
   {
     icon: `<img src="/imagenes/mgnutrition-white.webp"
                 alt="La Colada"
-                class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"
+                class="mx-auto h-auto w-64 py-3 sm:mx-0 lg:w-40 lg:py-5"
                 width="240" height="80"
                 loading="lazy" decoding="async" />`,
     name: "MG Nutrition",
     href: "#",
   },
   {
-    icon: `<img src="/imagenes/lacolada-white.webp"
+    icon: `<img src="/imagenes/lacolada.png"
                 alt="La Colada"
-                class="mx-auto h-auto w-32 py-3 sm:mx-0 lg:w-40 lg:py-5"
+                class="mx-auto h-auto w-64 py-3 sm:mx-0 lg:w-40 lg:py-5"
                 width="240" height="80"
                 loading="lazy" decoding="async" />`,
     name: "La Colada",
     href: "#",
   },
   {
-    icon: `<img src="/imagenes/lacolada-white.webp"
+    icon: `<img src="/imagenes/lacolada2.png"
                 alt="La Colada"
                 class="mx-auto h-auto w-24 py-3 sm:mx-0 md:w-32 lg:w-40 lg:py-5"
                 width="240" height="80"
