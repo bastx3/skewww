@@ -69,7 +69,7 @@ export const partnersData = [
   {
     icon: `<img src="/imagenes/lacolada2.png"
                 alt="La Colada"
-                class="mx-auto h-auto w-24 py-3 sm:mx-0 md:w-32 lg:w-40 lg:py-5"
+                class="mx-auto h-auto w-64 py-3 sm:mx-0 md:w-32 lg:w-40 lg:py-5"
                 width="240" height="80"
                 loading="lazy" decoding="async" />`,
     name: "La Colada",
