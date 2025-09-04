@@ -4,10 +4,10 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import ContactSection from "@components/sections/misc/ContactSection.astro";
 import { SITE } from "@data/constants";
 
-const pageTitle: string = `Contact | ${SITE.title}`;
+const pageTitle: string = `Contacto | ${SITE.title}`;
 const metaDescription =
-  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
-const ogTitle = "Contact Us | ScrewFast";
+  "¿Tienes dudas o quieres hablar de tu proyecto? Escríbenos y diseñaremos contigo una solución web moderna, rápida y optimizada para SEO.";
+const ogTitle = `Contacto | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -17,19 +17,19 @@ const ogTitle = "Contact Us | ScrewFast";
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/contact",
-    url: "https://screwfast.uk/contact",
-    name: "Contact Us | ScrewFast",
+    "@id": "https://artxeweb.com/contacto",
+    url: "https://artxeweb.com/contacto",
+    name: `Contacto | ${SITE.title}`,
     description:
-      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.",
+      "¿Tienes dudas o quieres hablar de tu proyecto? Escríbenos y diseñaremos contigo una solución web moderna, rápida y optimizada para SEO.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
+      url: "https://artxeweb.com",
+      name: SITE.title,
       description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Artxe Web: diseño y desarrollo de páginas web rápidas, seguras y optimizadas para SEO, además de branding y gestión de redes sociales.",
     },
-    inLanguage: "en-US",
+    inLanguage: "es-ES",
   }}
 >
   <ContactSection />

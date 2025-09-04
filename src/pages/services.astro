@@ -36,66 +36,66 @@ interface Article {
 const articles: Article[] = [
   {
     isRightSection: true,
-    title: "Delivering Expert Guidance",
+    title: "Asesoría experta en estrategia digital",
     subTitle:
-      "Embarking on a construction project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled contractor, our experts are on hand to offer tailored advice on product selection, project scope, and compliance with local regulations.",
+      "¿Tu web no convierte o no posiciona? En Artxe Web te guiamos con una consultoría clara y accionable: arquitectura de la información, SEO on-page, rendimiento, accesibilidad y diseño centrado en el usuario. Obtén un plan priorizado para mejorar visibilidad y conversiones.",
     single: false,
     imgOne: blueprints,
-    imgOneAlt: "Blueprints and digital tablet with construction plans.",
+    imgOneAlt: "Wireframes y plan de arquitectura web en tablet.",
     imgTwo: personWorking,
-    imgTwoAlt: "Person working in the office",
+    imgTwoAlt: "Profesional de diseño web trabajando en oficina.",
   },
   {
     isRightSection: false,
-    title: "Transforming Designs into Reality",
+    title: "Del diseño al sitio web real",
     subTitle:
-      "Our skilled craftsmen bring precision and excellence to every construction project. From minor installations to substantial structural work, ScrewFast offers reliable construction services to turn your plans into tangible outcomes. We ensure the highest standards of safety and workmanship, utilizing top-quality tools and materials from our extensive inventory.",
+      "Transformamos tus ideas en una web moderna, rápida y responsive con Astro/Tailwind. Pasamos de prototipos a componentes reales, cuidando tipografía, grid y microinteracciones para una experiencia impecable en móvil y escritorio.",
     img: beforeAfter,
-    imgAlt: "Construction site before and after",
+    imgAlt: "Comparativa antes y después de un rediseño web.",
     btnExists: true,
-    btnTitle: "Learn More",
+    btnTitle: "Ver cómo trabajamos",
     btnURL: "#",
   },
   {
     isRightSection: true,
-    title: "Navigating Projects with Professional Oversight",
+    title: "Gestión integral de proyectos web",
     subTitle:
-      "Effective project management is at the heart of any successful build. ScrewFast provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.",
+      "Nos encargamos del ciclo completo: discovery, diseño, desarrollo, contenidos, SEO técnico y publicación. Calendario claro, entregables por fases y comunicación continua para llegar a tiempo y con calidad.",
     single: false,
     imgOne: constructionWorkers,
-    imgOneAlt: "Construction workers orchestrating a project",
+    imgOneAlt: "Equipo coordinando un proyecto digital.",
     imgTwo: aerialView,
-    imgTwoAlt: "Aerial view of managed construction",
+    imgTwoAlt: "Vista general de un proyecto digital en curso.",
   },
   {
     isRightSection: false,
-    title: "Ensuring Long-lasting Performance",
+    title: "Mantenimiento, rendimiento y seguridad",
     subTitle:
-      "Our commitment to your project doesn't end at completion. ScrewFast offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
+      "Tu web necesita cuidados: actualizaciones, copias de seguridad, monitorización y mejoras de Core Web Vitals. Ofrecemos planes de soporte para que tu sitio se mantenga veloz, seguro y siempre operativo.",
     img: usingTools,
     imgAlt:
-      "Man in orange and black vest wearing white helmet holding yellow and black power tool",
+      "Optimización de rendimiento y mantenimiento de un sitio web.",
   },
   {
     isRightSection: true,
-    title: "Crafting Bespoke Strategies for Unique Challenges",
+    title: "Soluciones a medida para tu negocio",
     subTitle:
-      "For our larger enterprise clients, ScrewFast offers custom solutions designed to meet specific industry challenges. By understanding your unique needs, we engineer tailored strategies aimed at optimizing your operations, enhancing efficiency, and driving your business forward.",
+      "E-commerce, landings de alto rendimiento, multilenguaje, integraciones con CRM o analítica avanzada. Diseñamos soluciones personalizadas que impulsan marca, tráfico y ventas.",
     single: false,
     imgOne: progressBuilding,
-    imgOneAlt: "In progress building structure",
+    imgOneAlt: "Evolución de un proyecto digital a medida.",
     imgTwo: underConstruction,
-    imgTwoAlt: "Brown and gray building under construction",
+    imgTwoAlt: "Módulos en desarrollo para una web personalizada.",
     btnExists: true,
-    btnTitle: "Read more",
+    btnTitle: "Solicitar propuesta",
     btnURL: "#",
   },
 ];
 
-const pageTitle: string = `Services | ${SITE.title}`;
+const pageTitle: string = `Servicios | ${SITE.title}`;
 const metaDescription =
-  "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.";
-const ogTitle = "Expert Consultation Services | ScrewFast";
+  "Artxe Web: diseño y desarrollo de páginas web modernas con Astro/Tailwind, SEO, rendimiento, mantenimiento y soluciones a medida para impulsar tu negocio.";
+const ogTitle = `Servicios | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -105,37 +105,31 @@ const ogTitle = "Expert Consultation Services | ScrewFast";
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/services",
-    url: "https://screwfast.uk/services",
-    name: "Expert Consultation Services | ScrewFast",
+    "@id": "https://artxeweb.com/servicios",
+    url: "https://artxeweb.com/servicios",
+    name: `Servicios | ${SITE.title}`,
     description:
-      "Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.",
+      "Artxe Web: diseño y desarrollo de páginas web modernas con Astro/Tailwind, SEO, rendimiento, mantenimiento y soluciones a medida.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
+      url: "https://artxeweb.com",
+      name: SITE.title,
       description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Agencia de diseño web y SEO: sitios rápidos, seguros, responsive y optimizados para buscadores.",
     },
-    inLanguage: "en-US",
+    inLanguage: "es-ES",
   }}
 >
-  {/* MainSection is the introductory section of the page, it also contains a CTA button */}
+  {/* MainSection es la introducción con CTA */}
   <MainSection
-    title="Uniting Expertise with Your Vision"
-    subTitle="At ScrewFast, we take pride in providing comprehensive solutions and exceptional service in the hardware and construction industry. Our experienced team is dedicated to supporting your project from inception to completion with a range of specialized services."
+    title="Unimos diseño, SEO y rendimiento"
+    subTitle="En Artxe Web ofrecemos servicios integrales: desde la estrategia y el diseño, hasta el desarrollo con Astro/Tailwind, SEO técnico y mantenimiento continuo para que tu web crezca de forma sostenible."
     btnExists={true}
-    btnTitle="Schedule a Consultation"
+    btnTitle="Reservar una consultoría"
     btnURL="#"
   />
-  {/* RightSection and LeftSection contain details about various services along with pertinent imagery.
-  They alternate for variety in design.
-  The 'btnExists' property is used to toggle the display of a button in these sections.
-  When btnExists={true}, a button is displayed.
-  This can be used to link to more detailed information or related resources.
-  RightSection can also conditionally render one or two images based on the 'single' property.
-  If 'single' is true, it displays one image, otherwise it displays two.
-  */}
+
+  {/* Secciones alternas con detalles de servicios e imagen */}
   {
     articles.map((article) => {
       return article.isRightSection ? (
@@ -164,24 +158,25 @@ const ogTitle = "Expert Consultation Services | ScrewFast";
       );
     })
   }
-  {/* FeaturesStats section showcases essential stats valuable to users */}
+
+  {/* Métricas y resultados clave */}
   <FeaturesStats
-    title="By the Numbers"
-    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
+    title="Nuestros números"
+    subTitle="Resultados que avalan nuestro trabajo: sitios rápidos, bien posicionados y con mejor conversión."
     mainStatTitle="96%"
-    mainStatSubTitle="of our clients rate their experience with ScrewFast as exceptional"
+    mainStatSubTitle="de clientes recomiendan Artxe Web por calidad y soporte"
     stats={[
       {
         stat: "99.8%",
-        description: "project completion rate",
+        description: "sitios entregados a tiempo",
       },
       {
-        stat: "5,000+",
-        description: "successful installations",
+        stat: "500+",
+        description: "proyectos de diseño y optimización",
       },
       {
-        stat: "85%",
-        description: "client growth year-over-year",
+        stat: "3x",
+        description: "incremento medio de tráfico orgánico",
       },
     ]}
   />

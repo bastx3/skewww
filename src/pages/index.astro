@@ -10,6 +10,7 @@ import TestimonialsSection from "@components/sections/testimonials/TestimonialsS
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+
 import heroImage from "@images/hero-image.avif";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
@@ -31,117 +32,113 @@ const avatarSrcs: Array<string> = [
 <MainLayout>
   <AnnouncementBanner
     btnId="dismiss-button"
-    btnTitle="Explore ScrewFast on GitHub"
-    url="https://github.com/mearashadowfax/ScrewFast"
+    btnTitle="Visita Artxe Web"
+    url="https://artxeweb.com"
   />
 
   <HeroSection
     title=`Diseñamos tu página web <span
-        class="text-yellow-500 dark:text-yellow-400">a tu medida</span>`
-    subTitle="Top-quality hardware tools and expert construction services for every project need."
-    primaryBtn="Start Exploring"
-    primaryBtnURL="/products"
-    secondaryBtn="Contact Sales Team"
+        class="text-yellow-500 dark:text-yellow-400">moderna y optimizada</span>`
+    subTitle="Creamos webs rápidas, seguras y optimizadas para SEO, para que tu negocio destaque en Internet."
+    primaryBtn="Ver Planes"
+    primaryBtnURL="/pricing"
+    secondaryBtn="Contáctanos"
     secondaryBtnURL="/contact"
     withReview={true}
     avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.8</span> / 5`
-    starCount={4}
-    reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
+    rating=`<span class="font-bold">4.9</span> / 5`
+    starCount={5}
+    reviews=`Basado en <span class="font-bold">+500</span> proyectos entregados`
     src={heroImage}
-    alt="Stack of ScrewFast product boxes containing assorted hardware tools"
+    alt="Diseño web profesional de Artxe Web"
   />
 
   <ClientsSection
-    title="Trusted by Industry Leaders"
-    subTitle="Experience the reliability chosen by industry giants."
+    title="Confían en nosotros"
+    subTitle="Marcas y negocios que han mejorado su presencia online con Artxe Web."
     partners={partnersData}
   />
 
   <FeaturesGeneral
-    title="Meeting Industry Demands"
-    subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
+    title="Soluciones integrales en diseño web"
+    subTitle="Ofrecemos páginas web 100% optimizadas para Google, diseño gráfico único, gestión de redes sociales y tiendas online adaptadas a cada cliente."
     src={featureImage}
-    alt="ScrewFast products in floating boxes"
+    alt="Diseños modernos de Artxe Web"
     features={features}
   />
 
   <FeaturesNavs
-    title=`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
+    title=`Nuestros <span class="text-yellow-500 dark:text-yellow-400">servicios digitales</span> pensados para tu negocio`
     tabs={[
       {
-        heading: "Cutting-Edge Tools",
+        heading: "Diseño Web",
         content:
-          "Empower your projects with ScrewFast's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
+          "Creamos páginas web modernas, rápidas y fáciles de gestionar, adaptadas a móviles y optimizadas para SEO.",
         svg: "tools",
         src: tools,
-        alt: "Yellow and black heavy equipment on brown grass field",
+        alt: "Ejemplo de diseño web en laptop",
         first: true,
       },
       {
-        heading: "Intuitive Dashboards",
+        heading: "SEO y Posicionamiento",
         content:
-          "Navigate with ease using ScrewFast's intuitive dashboards. Set up and oversee your projects seamlessly, with user-friendly interfaces designed for quick and effective workflow management.",
+          "Mejora tu visibilidad en Google con nuestras estrategias de SEO. Aumenta visitas y clientes potenciales.",
         svg: "dashboard",
         src: dashboard,
-        alt: "A screenshot or graphic representation of the intuitive dashboard",
+        alt: "Gráfico de rendimiento en buscadores",
         second: true,
       },
       {
-        heading: "Robust Features",
+        heading: "Redes Sociales & Branding",
         content:
-          "Minimize complexity, maximize productivity. ScrewFast's robust features are engineered to streamline your construction process, delivering results that stand out for their excellence.",
+          "Gestionamos y optimizamos tus perfiles en Instagram, TikTok, Facebook o YouTube. También diseñamos logotipos y material gráfico.",
         svg: "house",
         src: construction,
-        alt: "Gray metal building frame near tower crane during daytime",
+        alt: "Diseño gráfico y redes sociales",
       },
     ]}
   />
 
   <TestimonialsSection
-    title="Fast-Track Your Projects"
-    subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
-    ;
+    title="Historias de éxito"
+    subTitle="Nuestros clientes destacan la rapidez, el soporte cercano y la calidad de nuestros proyectos."
     testimonials={[
       {
         content:
-          "ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!",
-        author: "Samantha Ruiz",
-        role: "Chief Operating Officer | ConstructIt Inc.",
+          "Artxe Web nos diseñó una web profesional y optimizada. Gracias al SEO que aplicaron, hemos duplicado las visitas en menos de 3 meses.",
+        author: "Laura Fernández",
+        role: "CEO | Tienda Online de Moda",
         avatarSrc:
-          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&facepad=2&w=320&h=320&q=80",
       },
     ]}
     statistics={[
       {
-        count: "70k+",
-        description:
-          "customers equipped — from DIY to major construction firms",
+        count: "500+",
+        description: "webs diseñadas y optimizadas para SEO",
       },
       {
-        count: "35%",
-        description:
-          "uptick in project efficiency with ScrewFast tools and services",
+        count: "95%",
+        description: "clientes satisfechos que recomiendan Artxe Web",
       },
       {
-        count: "15.3%",
-        description:
-          "reduction in maintenance costs reported by long-term clients",
+        count: "3x",
+        description: "más tráfico web promedio en 6 meses",
       },
       {
-        count: "2x",
-        description: "quicker assembly using innovative fastening solutions",
+        count: "100%",
+        description: "páginas adaptadas a móviles y tablets",
       },
     ]}
   />
 
   <PricingSection pricing={pricing} />
 
-  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+  <FAQ title="Preguntas<br />frecuentes" faqs={faqs} />
 
   <HeroSectionAlt
-    title="Let's Build Together"
-    subTitle="ScrewFast is an open-source template, meticulously crafted with Astro, Tailwind CSS, and Preline UI frameworks."
-    url="https://github.com/mearashadowfax/ScrewFast"
+    title="¡Hablemos de tu proyecto!"
+    subTitle="En Artxe Web combinamos diseño, SEO y marketing digital para llevar tu negocio al siguiente nivel."
+    url="https://artxeweb.com/contacto"
   />
 </MainLayout>
