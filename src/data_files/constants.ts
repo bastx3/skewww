@@ -40,39 +40,39 @@ export const OG = {
 
 export const partnersData = [
   {
-    icon: `<img src="/imagenes/lacolada-white.webp"
+    icon: `<img src="/imagenes/lacolada-logo.png"
                 alt="La Colada"
-                class="mx-auto h-auto w-64 py-3 sm:mx-0 lg:w-40 lg:py-5"
+                class="mx-auto h-auto w-86 py-3 sm:mx-0 lg:w-64 lg:py-5"
                 width="240" height="80"
                 loading="lazy" decoding="async" />`,
     name: "La Colada",
     href: "#",
   },
   {
-    icon: `<img src="/imagenes/mgnutrition-white.webp"
-                alt="La Colada"
-                class="mx-auto h-auto w-64 py-3 sm:mx-0 lg:w-40 lg:py-5"
+    icon: `<img src="/imagenes/mgnutrition-logo.png"
+                alt="MG Nutrition"
+                class="mx-auto h-auto w-86 py-3 sm:mx-0 lg:w-64 lg:py-5"
                 width="240" height="80"
                 loading="lazy" decoding="async" />`,
-    name: "MG Nutrition",
+    name: "MGNutrition",
     href: "#",
   },
   {
-    icon: `<img src="/imagenes/lacolada.png"
-                alt="La Colada"
-                class="mx-auto h-auto w-64 py-3 sm:mx-0 lg:w-40 lg:py-5"
+    icon: `<img src="/imagenes/gfrprebartechnology-logo.png"
+                alt="GFRP Rebar Technology"
+                class="mx-auto h-auto w-86 py-3 sm:mx-0 lg:w-64 lg:py-5"
                 width="240" height="80"
                 loading="lazy" decoding="async" />`,
-    name: "La Colada",
+    name: "GFRP",
     href: "#",
   },
   {
-    icon: `<img src="/imagenes/lacolada2.png"
-                alt="La Colada"
-                class="mx-auto h-auto w-64 py-3 sm:mx-0 md:w-32 lg:w-40 lg:py-5"
+    icon: `<img src="/imagenes/forajeputuriproromania-logo.png"
+                alt="Foraje Puturi Pro Romania"
+                class="mx-auto h-auto w-86 py-3 sm:mx-0 lg:w-64 lg:py-5"
                 width="240" height="80"
                 loading="lazy" decoding="async" />`,
-    name: "La Colada",
+    name: "Foraje Puturi",
     href: "#",
   },
 ];
