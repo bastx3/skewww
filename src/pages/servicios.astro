@@ -1,0 +1,183 @@
+---
+// Import necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import MainSection from "@components/ui/blocks/MainSection.astro";
+import LeftSection from "@components/ui/blocks/LeftSection.astro";
+import RightSection from "@components/ui/blocks/RightSection.astro";
+import FeaturesStats from "@components/sections/features/FeaturesStats.astro";
+
+// Import necessary images
+import blueprints from "@images/blueprints-image.avif";
+import personWorking from "@images/person-working.avif";
+import beforeAfter from "@images/before-after.avif";
+import constructionWorkers from "@images/construction-workers.avif";
+import aerialView from "@images/aerial-view.avif";
+import usingTools from "@images/using-tools.avif";
+import progressBuilding from "@images/progress-building.avif";
+import underConstruction from "@images/under-construction.avif";
+import { SITE } from "@data/constants";
+
+interface Article {
+  isRightSection: boolean;
+  title: string;
+  subTitle: string;
+  btnExists?: boolean;
+  btnTitle?: string;
+  btnURL?: string;
+  single?: boolean;
+  img?: any;
+  imgAlt?: string;
+  imgOne?: any;
+  imgOneAlt?: string;
+  imgTwo?: any;
+  imgTwoAlt?: string;
+}
+
+const articles: Article[] = [
+  {
+    isRightSection: true,
+    title: "Asesoría experta en estrategia digital",
+    subTitle:
+      "¿Tu web no convierte o no posiciona? En Artxe Web te guiamos con una consultoría clara y accionable: arquitectura de la información, SEO on-page, rendimiento, accesibilidad y diseño centrado en el usuario. Obtén un plan priorizado para mejorar visibilidad y conversiones.",
+    single: false,
+    imgOne: blueprints,
+    imgOneAlt: "Wireframes y plan de arquitectura web en tablet.",
+    imgTwo: personWorking,
+    imgTwoAlt: "Profesional de diseño web trabajando en oficina.",
+  },
+  {
+    isRightSection: false,
+    title: "Del diseño al sitio web real",
+    subTitle:
+      "Transformamos tus ideas en una web moderna, rápida y responsive con Astro/Tailwind. Pasamos de prototipos a componentes reales, cuidando tipografía, grid y microinteracciones para una experiencia impecable en móvil y escritorio.",
+    img: beforeAfter,
+    imgAlt: "Comparativa antes y después de un rediseño web.",
+    btnExists: true,
+    btnTitle: "Ver cómo trabajamos",
+    btnURL: "#",
+  },
+  {
+    isRightSection: true,
+    title: "Gestión integral de proyectos web",
+    subTitle:
+      "Nos encargamos del ciclo completo: discovery, diseño, desarrollo, contenidos, SEO técnico y publicación. Calendario claro, entregables por fases y comunicación continua para llegar a tiempo y con calidad.",
+    single: false,
+    imgOne: constructionWorkers,
+    imgOneAlt: "Equipo coordinando un proyecto digital.",
+    imgTwo: aerialView,
+    imgTwoAlt: "Vista general de un proyecto digital en curso.",
+  },
+  {
+    isRightSection: false,
+    title: "Mantenimiento, rendimiento y seguridad",
+    subTitle:
+      "Tu web necesita cuidados: actualizaciones, copias de seguridad, monitorización y mejoras de Core Web Vitals. Ofrecemos planes de soporte para que tu sitio se mantenga veloz, seguro y siempre operativo.",
+    img: usingTools,
+    imgAlt:
+      "Optimización de rendimiento y mantenimiento de un sitio web.",
+  },
+  {
+    isRightSection: true,
+    title: "Soluciones a medida para tu negocio",
+    subTitle:
+      "E-commerce, landings de alto rendimiento, multilenguaje, integraciones con CRM o analítica avanzada. Diseñamos soluciones personalizadas que impulsan marca, tráfico y ventas.",
+    single: false,
+    imgOne: progressBuilding,
+    imgOneAlt: "Evolución de un proyecto digital a medida.",
+    imgTwo: underConstruction,
+    imgTwoAlt: "Módulos en desarrollo para una web personalizada.",
+    btnExists: true,
+    btnTitle: "Solicitar propuesta",
+    btnURL: "#",
+  },
+];
+
+const pageTitle: string = `Servicios | ${SITE.title}`;
+const metaDescription =
+  "Artxe Web: diseño y desarrollo de páginas web modernas con Astro/Tailwind, SEO, rendimiento, mantenimiento y soluciones a medida para impulsar tu negocio.";
+const ogTitle = `Servicios | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://artxeweb.com/servicios",
+    url: "https://artxeweb.com/servicios",
+    name: `Servicios | ${SITE.title}`,
+    description:
+      "Artxe Web: diseño y desarrollo de páginas web modernas con Astro/Tailwind, SEO, rendimiento, mantenimiento y soluciones a medida.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://artxeweb.com",
+      name: SITE.title,
+      description:
+        "Agencia de diseño web y SEO: sitios rápidos, seguros, responsive y optimizados para buscadores.",
+    },
+    inLanguage: "es",
+  }}
+>
+  {/* MainSection es la introducción con CTA */}
+  <MainSection
+    title="Unimos diseño, SEO y rendimiento"
+    subTitle="En Artxe Web ofrecemos servicios integrales: desde la estrategia y el diseño, hasta el desarrollo con Astro/Tailwind, SEO técnico y mantenimiento continuo para que tu web crezca de forma sostenible."
+    btnExists={true}
+    btnTitle="Reservar una consultoría"
+    btnURL="/contacto"
+  />
+
+  {/* Secciones alternas con detalles de servicios e imagen */}
+  {
+    articles.map((article) => {
+      return article.isRightSection ? (
+        <RightSection
+          title={article.title}
+          subTitle={article.subTitle}
+          single={article.single}
+          imgOne={article.imgOne}
+          imgOneAlt={article.imgOneAlt}
+          imgTwo={article.imgTwo}
+          imgTwoAlt={article.imgTwoAlt}
+          btnExists={article.btnExists}
+          btnTitle={article.btnTitle}
+          btnURL={article.btnURL}
+        />
+      ) : (
+        <LeftSection
+          title={article.title}
+          subTitle={article.subTitle}
+          img={article.img}
+          imgAlt={article.imgAlt}
+          btnExists={article.btnExists}
+          btnTitle={article.btnTitle}
+          btnURL={article.btnURL}
+        />
+      );
+    })
+  }
+
+  {/* Métricas y resultados clave */}
+  <FeaturesStats
+    title="Nuestros números"
+    subTitle="Resultados que avalan nuestro trabajo: sitios rápidos, bien posicionados y con mejor conversión."
+    mainStatTitle="96%"
+    mainStatSubTitle="de clientes recomiendan Artxe Web por calidad y soporte"
+    stats={[
+      {
+        stat: "99.8%",
+        description: "sitios entregados a tiempo",
+      },
+      {
+        stat: "500+",
+        description: "proyectos de diseño y optimización",
+      },
+      {
+        stat: "3x",
+        description: "incremento medio de tráfico orgánico",
+      },
+    ]}
+  />
+</MainLayout>

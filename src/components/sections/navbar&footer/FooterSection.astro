@@ -2,20 +2,15 @@
 // Import the necessary dependencies
 import FooterSocialLink from "@components/ui/links/FooterSocialLink.astro";
 import EmailFooterInput from "@components/ui/forms/input/EmailFooterInput.astro";
-import enStrings from "@utils/navigation.ts";
-import frStrings from "@utils/fr/navigation.ts";
+import strings from "@utils/navigation.ts";
 import Icon from "@components/ui/icons/Icon.astro";
 import BrandLogo from "@components/BrandLogo.astro";
 import { SITE } from "@data/constants";
 
-// Select the correct translation based on the page's lang prop:
-const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
-
 // Define the variables that will be used in this component
-const sectionThreeTitle: string = Astro.currentLocale === "fr" ? "Rester à jour" : "Stay up to date";
-const sectionThreeContent: string = Astro.currentLocale === "fr" ? "Restez informé des derniers outils et des offres exclusives." :
-  "Stay updated with the latest tools and exclusive deals.";
-const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafted by";
+const sectionThreeTitle: string = "Mantente actualizado";
+const sectionThreeContent: string = "Recibe las últimas novedades sobre diseño web y ofertas exclusivas.";
+const crafted: string = "Creado por";
 ---
 
 <footer class="w-full bg-neutral-300 dark:bg-neutral-900">
@@ -43,9 +38,9 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
                   >
                     {link.name}
                   </a>
-                  {section.section === "Company" && index === 2 ? (
+                  {section.section === "Empresa" && index === 2 ? (
                     <span class="ms-1 inline rounded-lg bg-orange-500 px-2 py-1 text-xs font-bold text-neutral-50">
-                      We're hiring!
+                      ¡Estamos contratando!
                     </span>
                   ) : null}
                 </li>

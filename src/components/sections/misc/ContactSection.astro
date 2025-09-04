@@ -9,11 +9,11 @@ import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
 // Define the variables that will be used in this component
-const title: string = "Contact us";
+const title: string = "Contáctanos";
 const subTitle: string =
-  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
-const formTitle: string = "Fill in the form below";
-const formSubTitle: string = "We'll get back to you in 1-2 business days.";
+  "¿Tienes preguntas o quieres discutir un proyecto? Contáctanos y creemos juntos la solución perfecta con nuestros servicios.";
+const formTitle: string = "Completa el formulario";
+const formSubTitle: string = "Te responderemos en 1-2 días laborables.";
 ---
 
 <!-- Contact Us -->
@@ -44,12 +44,12 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-firstname-contacts"
-                label="First Name"
+                label="Nombre"
                 name="hs-firstname-contacts"
               />
               <TextInput
                 id="hs-lastname-contacts"
-                label="Last Name"
+                label="Apellidos"
                 name="hs-firstname-contacts"
               />
             </div>
@@ -57,13 +57,13 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
             <PhoneInput id="hs-phone-number" />
             <TextAreaInput
               id="hs-about-contacts"
-              label="Details"
+              label="Detalles"
               name="hs-about-contacts"
             />
           </div>
 
           <div class="mt-4 grid">
-            <AuthBtn title="Send Message" />
+            <AuthBtn title="Enviar Mensaje" />
           </div>
 
           <div class="mt-3 text-center">
@@ -77,10 +77,10 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
       <!--ContactIconBlocks are used to display different methods of contacting, including visiting office, email, browsing knowledgebase, and FAQ.-->
       <div class="divide-y divide-neutral-300 dark:divide-neutral-700">
         <ContactIconBlock
-          heading="Knowledgebase"
-          content="Browse through all of our knowledgebase articles."
+          heading="Base de Conocimiento"
+          content="Explora todos nuestros artículos de la base de conocimiento."
           isLinkVisible={true}
-          linkTitle="Visit guides & tutorials"
+          linkTitle="Ver guías y tutoriales"
           linkURL="#"
           isArrowVisible={true}
           ><Icon name="question" />
@@ -88,27 +88,27 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
 
         <ContactIconBlock
           heading="FAQ"
-          content="Explore our FAQ for quick, clear answers to common queries."
+          content="Explora nuestras FAQ para respuestas rápidas y claras a consultas comunes."
           isLinkVisible={true}
-          linkTitle="Visit FAQ"
+          linkTitle="Ver FAQ"
           linkURL="#"
           isArrowVisible={true}
           ><Icon name="chatBubble" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Visit our office"
-          content="UK ScrewFast"
+          heading="Visita nuestra oficina"
+          content="Artxe Web España"
           isAddressVisible={true}
-          addressContent="72 Union Terrace, E10 4PE London"
+          addressContent="Madrid, España"
           ><Icon name="mapPin" />
         </ContactIconBlock>
 
         <ContactIconBlock
-          heading="Contact us by email"
-          content="Prefer the written word? Drop us an email at"
+          heading="Contáctanos por email"
+          content="¿Prefieres escribir? Envíanos un email a"
           isLinkVisible={true}
-          linkTitle="support@screwfast.uk"
+          linkTitle="hola@artxeweb.com"
           linkURL="#"
           ><Icon name="envelopeOpen" />
         </ContactIconBlock>

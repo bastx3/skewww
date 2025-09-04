@@ -1,28 +1,28 @@
 // An array of links for navigation bar
 const navBarLinks = [
-  { name: "Home", url: "/" },
-  { name: "Products", url: "/products" },
-  { name: "Services", url: "/services" },
+  { name: "Inicio", url: "/" },
+  { name: "Servicios", url: "/servicios" },
+  { name: "Proyectos", url: "/proyectos" },
   { name: "Blog", url: "/blog" },
-  { name: "Contact", url: "/contact" },
+  { name: "Contacto", url: "/contacto" },
 ];
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: "Servicios",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "Documentación", url: "/welcome-to-docs/" },
+      { name: "Diseño Web", url: "/servicios" },
+      { name: "SEO", url: "/servicios" },
     ],
   },
   {
-    section: "Company",
+    section: "Empresa",
     links: [
-      { name: "About us", url: "#" },
+      { name: "Sobre nosotros", url: "#" },
       { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Trabajos", url: "#" },
+      { name: "Clientes", url: "#" },
     ],
   },
 ];
@@ -30,7 +30,7 @@ const footerLinks = [
 const socialLinks = {
   facebook: "https://www.facebook.com/",
   x: "https://twitter.com/",
-  github: "https://github.com/mearashadowfax/ScrewFast",
+  github: "https://github.com/artxeweb",
   google: "https://www.google.com/",
   slack: "https://slack.com/",
 };

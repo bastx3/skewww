@@ -1,29 +1,29 @@
 {
-  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "subTitle": "Pregúntanos cualquier cosa sobre nuestros servicios y obtén respuestas claras.",
   "faqs": [
     {
-      "question": "What types of tools are included in the Starter Kit?",
-      "answer": "The Starter Kit features essential hand and power tools for diverse DIY projects, including hammers, drills, screwdrivers, and a variety of fasteners. It's a curated selection to help beginners and experienced DIYers alike tackle most home improvement tasks."
+      "question": "¿Qué incluye el diseño de una página web?",
+      "answer": "Nuestro servicio de diseño web incluye diseño responsive, optimización SEO, velocidad de carga optimizada, formularios de contacto, integración con redes sociales y un panel de administración fácil de usar."
     },
     {
-      "question": "Can I upgrade from the Starter Kit to the Professional Toolbox?",
-      "answer": "Absolutely! You can upgrade to the Professional Toolbox at any time to access a wider range of high-quality tools, enjoy priority customer support, and receive exclusive content. Contact our support team for a seamless transition."
+      "question": "¿Cuánto tiempo tarda en estar lista mi web?",
+      "answer": "El tiempo de desarrollo varía según la complejidad del proyecto. Una web básica puede estar lista en 1-2 semanas, mientras que proyectos más complejos pueden tomar 4-6 semanas. Te proporcionamos un cronograma detallado al inicio del proyecto."
     },
     {
-      "question": "What discounts are available for bulk orders through the Professional Toolbox plan?",
-      "answer": "Professional Toolbox members are entitled to exclusive discounts on bulk orders, the percentage of which may vary depending on the order volume. Get in touch with us to discuss your needs, and we'll provide a tailored discount structure."
+      "question": "¿Ofrecen mantenimiento y soporte después del lanzamiento?",
+      "answer": "Sí, ofrecemos planes de mantenimiento que incluyen actualizaciones de seguridad, copias de seguridad, monitorización del rendimiento y soporte técnico. También proporcionamos formación para que puedas gestionar el contenido de tu web."
     },
     {
-      "question": "What kind of customer support can I expect?",
-      "answer": "All our customers receive dedicated email support. With the Starter Kit, you'll receive our standard support, while the Professional Toolbox plan upgrades you to priority support, meaning faster response times and specialized assistance."
+      "question": "¿Qué tipo de soporte al cliente puedo esperar?",
+      "answer": "Todos nuestros clientes reciben soporte dedicado por email y teléfono. Ofrecemos respuestas rápidas y asistencia especializada durante todo el proceso de desarrollo y después del lanzamiento."
     },
     {
-      "question": "How current are the online resources and tutorials?",
-      "answer": "We regularly update our online resources and tutorials to reflect the latest trends in DIY and construction, as well as introductions to new tools and techniques. Our material aims to be comprehensive and user-friendly for all skill levels."
+      "question": "¿Mis contenidos y recursos están actualizados?",
+      "answer": "Actualizamos regularmente nuestros recursos y tutoriales para reflejar las últimas tendencias en diseño web, SEO y desarrollo. Nuestro material está diseñado para ser comprensible y útil para todos los niveles."
     },
     {
-      "question": "Does ScrewFast offer services for large-scale construction projects?",
-      "answer": "Yes, our Enterprise Solutions are designed for larger companies requiring comprehensive services. We provide consultation, planning, and supply of high-grade tools and materials, as well as staffing solutions for substantial construction needs. Contact us for a customized quote."
+      "question": "¿Ofrecen servicios para empresas grandes?",
+      "answer": "Sí, nuestras Soluciones Empresariales están diseñadas para empresas que requieren servicios integrales. Proporcionamos consultoría, planificación, desarrollo de plataformas complejas y soluciones de marketing digital. Contáctanos para un presupuesto personalizado."
     }
   ]
 }
