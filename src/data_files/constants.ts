@@ -49,7 +49,7 @@ export const partnersData = [
     href: "#",
   },
   {
-    icon: `<img src="/imagenes/mgnutrition-logo.png"
+    icon: `<img src="/imagenes/web-mgnutrition.webp"
                 alt="MG Nutrition"
                 class="mx-auto h-auto w-86 py-3 sm:mx-0 lg:w-64 lg:py-5"
                 width="240" height="80"
