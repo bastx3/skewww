@@ -1,0 +1,44 @@
+@@ .. @@
+ // Importing necessary components
+ import MainLayout from "@/layouts/MainLayout.astro";
+ import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+-import CardSmall from "@components/ui/cards/CardSmall.astro";
+-import CardWide from "@components/ui/cards/CardWide.astro";
++import CardProject from "@components/ui/cards/CardProject.astro";
+ import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+ import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
+
+ // Importing necessary functions from Astro
+@@ .. @@
+ import { SITE } from "@data/constants";
+
+-// Fetching all the product related content and sorting it by main.id
+-const product: CollectionEntry<"products">[] = (
+-  await getCollection("products", ({ id }) => {
+-    return id.startsWith("en/");
+-  })
+-).sort(
+-  (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
+-    a.data.main.id - b.data.main.id
++// Fetching all projects and sorting by year and featured status
++const projects: CollectionEntry<"projects">[] = (
++  await getCollection("projects")
++).sort((a, b) => {
++  // Featured projects first, then by year (newest first)
++  if (a.data.featured && !b.data.featured) return -1;
++  if (!a.data.featured && b.data.featured) return 1;
++  return b.data.year - a.data.year;
++});
++
++// Separate featured and regular projects
++const featuredProjects = projects.filter(p => p.data.featured);
++const regularProjects = projects.filter(p => !p.data.featured);
++
++// Get unique categories
++const categories = [...new Set(projects.map(p => p.data.category))];
++
++// Get projects by category
++const projectsByCategory = categories.map(category => ({
++  category,
++  projects: projects.filter(p => p.data.category === category)
++}));

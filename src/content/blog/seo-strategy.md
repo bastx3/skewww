@@ -1,10 +1,15 @@
 ---
 title: "Estrategia SEO: el pilar invisible del éxito digital"
 description: "Descubre cómo una estrategia SEO sólida transforma tu web en un motor real de captación de clientes."
-author: "Víctor"
+metaTitle: "Estrategia SEO 2024: Guía Completa para Posicionar tu Web"
+metaDescription: "✅ Aprende a crear una estrategia SEO efectiva paso a paso. Guía completa con técnicas actualizadas para posicionar tu web en Google en 2024."
+ogImage: "@/images/blog/seo-strategy-og.avif"
+noindex: false
+nofollow: false
+author: "victor"
 authorImage: "@/images/blog/victor.avif"
 authorImageAlt: "Foto de perfil del autor"
-pubDate: 2025-09-06
+pubDate: 2024-12-15
 cardImage: "@/images/blog/seo-strategy.avif"
 cardImageAlt: "Pantalla con gráficos de posicionamiento SEO"
 readTime: 6
