@@ -14,8 +14,6 @@ const {
   lang = "es",
   customDescription = null,
   customOgTitle = null,
-  noindex = false,
-  nofollow = false,
 } = Astro.props;
 
 // Interface to type-check the properties
@@ -26,8 +24,6 @@ interface Props {
   lang?: string;
   customDescription?: string | null;
   customOgTitle?: string | null;
-  noindex?: boolean;
-  nofollow?: boolean;
 }
 ---
 
@@ -42,10 +38,6 @@ interface Props {
     />
     {/* Define the title of the page */}
     <title>{title}</title>
-    {/* SEO meta tags */}
-    {noindex && <meta name="robots" content="noindex" />}
-    {nofollow && <meta name="robots" content="nofollow" />}
-    {(noindex && nofollow) && <meta name="robots" content="noindex, nofollow" />}
     <script is:inline>
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (

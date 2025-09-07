@@ -14,10 +14,13 @@ import { SITE } from "@data/constants";
 
 // Update getStaticPaths for English posts
 export async function getStaticPaths() {
-  const blogPosts = await getCollection("blog");
+  const blogPosts = await getCollection("blog", ({ id }) =>
+    id.startsWith("en/")
+  );
   return blogPosts.map((post) => {
+    const idWithoutLang = post.id.replace(/^en\//, ""); // Remove the "en/" prefix
     return {
-      params: { id: post.id },
+      params: { id: idWithoutLang },
       props: { post },
     };
   });
@@ -26,7 +29,10 @@ export async function getStaticPaths() {
 // Get the current post's data
 const { post } = Astro.props;
 
-const blogPosts: CollectionEntry<"blog">[] = await getCollection("blog");
+const blogPosts: CollectionEntry<"blog">[] = await getCollection(
+  "blog",
+  ({ id }) => id.startsWith("en/")
+);
 
 // Filter out the current post to get related posts
 // Note: This is a very basic way of choosing related posts, just for the purpose of the example.
@@ -36,47 +42,38 @@ const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
   (blogEntry) => blogEntry.id !== post.id
 );
 
-const pageTitle: string = post.data.metaTitle || `${post.data.title} | ${SITE.title}`;
+const pageTitle: string = `${post.data.title} | ${SITE.title}`;
 // For the meta description, use the first paragraph of content if available
 const metaDescription =
-  post.data.metaDescription || post.data.description || post.data.contents[0];
-const ogTitle = post.data.metaTitle || `${post.data.title} | Blog | ${SITE.title}`;
-const ogImageSrc = post.data.ogImage || post.data.cardImage;
-
-// Get author data
-const authorData = await getCollection("authors");
-const author = authorData.find(a => a.id === post.data.author);
+  post.data.contents[0] || `Read ${post.data.title} on ScrewFast's blog`;
+const ogTitle = `${post.data.title} | Blog | ${SITE.title}`;
 ---
 
 <MainLayout
   title={pageTitle}
   customDescription={metaDescription}
   customOgTitle={ogTitle}
-  noindex={post.data.noindex}
-  nofollow={post.data.nofollow}
   structuredData={{
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.data.title,
-    image: ogImageSrc.src,
+    image: post.data.cardImage.src,
     datePublished: post.data.pubDate.toISOString(),
-    dateModified: post.data.pubDate.toISOString(),
     author: {
       "@type": "Person",
-      name: author?.data.name || post.data.author,
-      url: author ? `/autores/${author.id}` : undefined,
+      name: post.data.author,
     },
     publisher: {
       "@type": "Organization",
-      name: "Artxe Web",
+      name: SITE.title,
       logo: {
         "@type": "ImageObject",
-        url: "https://artxeweb.com/favicon.ico",
+        url: "https://screwfast.uk/favicon.ico",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://artxeweb.com/blog/${post.id}`,
+      "@id": `https://screwfast.uk/blog/${post.id.replace(/^en\//, "")}`,
     },
   }}
 >
@@ -84,34 +81,14 @@ const author = authorData.find(a => a.id === post.data.author);
     <div class="max-w-2xl">
       <div class="mb-6 flex items-center justify-between">
         <div class="flex w-full gap-x-5 sm:items-center sm:gap-x-3">
-          {author ? (
-            <a href={`/autores/${author.id}`} class="shrink-0">
-              <Image
-                class="size-10 rounded-full sm:h-14 sm:w-14"
-                src={author.data.avatar}
-                alt={author.data.avatarAlt}
-                loading="lazy"
-              />
-            </a>
-          ) : (
-            <AvatarBlogLarge blogEntry={post} />
-          )}
+          <AvatarBlogLarge blogEntry={post} />
           <div class="grow">
             <div class="flex items-center justify-between gap-x-2">
               <div>
                 {/* Post metadata and author info */}
-                {author ? (
-                  <a 
-                    href={`/autores/${author.id}`}
-                    class="font-bold text-neutral-700 hover:text-orange-400 dark:text-neutral-300 dark:hover:text-orange-300"
-                  >
-                    {author.data.name}
-                  </a>
-                ) : (
-                  <span class="font-bold text-neutral-700 dark:text-neutral-300">
-                    {post.data.author}
-                  </span>
-                )}
+                <span class="font-bold text-neutral-700 dark:text-neutral-300">
+                  {post.data.author}
+                </span>
                 <ul class="text-xs text-neutral-500">
                   <li
                     class="relative inline-block pe-6 before:absolute before:end-2 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-neutral-300 last:pe-0 last-of-type:before:hidden dark:text-neutral-400 dark:before:bg-neutral-600"

@@ -21,7 +21,6 @@ const footerLinks = [
     links: [
       { name: "Sobre nosotros", url: "#" },
       { name: "Blog", url: "/blog" },
-      { name: "Proyectos", url: "/proyectos" },
       { name: "Trabajos", url: "#" },
       { name: "Clientes", url: "#" },
     ],
