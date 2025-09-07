@@ -10,7 +10,7 @@ author: "laura"
 authorImage: "/imagenes/x.jpg"
 authorImageAlt: "Foto de perfil de la autora"
 pubDate: 2024-12-10
-cardImage: "@/images/blog/google-ads-budget.avif"
+cardImage: "/imagenes/x.jpg"
 cardImageAlt: "Ilustración de un gráfico con billetes y clics digitales"
 readTime: 7
 tags: ["Google Ads", "publicidad online", "marketing digital", "ROI"]
