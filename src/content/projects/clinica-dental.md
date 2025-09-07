@@ -7,7 +7,7 @@ year: 2024
 technologies: ["Astro", "Tailwind CSS", "Sistema de Citas", "SEO Local"]
 url: "https://clinica-sonrisas-demo.com"
 featured: true
-cardImage: "@/images/projects/clinica-dental.avif"
+cardImage: "/imagenes/x.jpg"
 cardImageAlt: "Página web profesional para clínica dental"
 results:
   traffic: "+320% tráfico local"
