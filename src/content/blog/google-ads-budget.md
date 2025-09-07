@@ -3,11 +3,11 @@ title: "¿Cuánto invertir en Google Ads? Claves para definir tu presupuesto"
 description: "Aprende a calcular cuánto invertir en campañas de Google Ads según tu sector, competencia y objetivos."
 metaTitle: "Presupuesto Google Ads 2024: Cómo Calcular tu Inversión Ideal"
 metaDescription: "💰 Descubre cómo calcular el presupuesto perfecto para Google Ads. Guía práctica con ejemplos reales para maximizar tu ROI en publicidad online."
-ogImage: "@/images/blog/google-ads-budget-og.avif"
+ogImage: "/imagenes/x.jpg"
 noindex: false
 nofollow: false
 author: "laura"
-authorImage: "@/images/blog/laura.avif"
+authorImage: "/imagenes/x.jpg"
 authorImageAlt: "Foto de perfil de la autora"
 pubDate: 2024-12-10
 cardImage: "@/images/blog/google-ads-budget.avif"
