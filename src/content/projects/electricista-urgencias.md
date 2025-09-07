@@ -7,7 +7,7 @@ year: 2024
 technologies: ["Astro", "Tailwind CSS", "Google Ads", "Llamadas Tracking"]
 url: "https://electrirapido-demo.com"
 featured: false
-cardImage: "@/images/projects/electricista.avif"
+cardImage: "/imagenes/x.jpg"
 cardImageAlt: "Landing page para electricista de urgencias"
 results:
   traffic: "+400% llamadas urgentes"
