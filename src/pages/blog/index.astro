@@ -10,37 +10,37 @@ import { SITE } from "@data/constants";
 
 // Get all blogs post in English and sort them based on publish date
 
-const englishBlogEntries = await getCollection("blog", ({ id }) => {
+const blogEntries = await getCollection("blog", ({ data }) => {
+  return !data.noindex;
+});
+
+const insightsEntries = await getCollection("insights", ({ id }) => {
   return id.startsWith("en/");
 });
 
-const englishInsightsEntries = await getCollection("insights", ({ id }) => {
-  return id.startsWith("en/");
-});
-
-const blogPosts: CollectionEntry<"blog">[] = englishBlogEntries.sort(
+const blogPosts: CollectionEntry<"blog">[] = blogEntries.sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 // Get all insights posts
-const insightPosts: CollectionEntry<"insights">[] = englishInsightsEntries;
+const insightPosts: CollectionEntry<"insights">[] = insightsEntries;
 
 // Separate the most recent post from others
 const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
 // Define variables for page content
-const title: string = "Your Gateway to Construction Excellence";
+const title: string = "Blog de Diseño Web y Marketing Digital";
 const subTitle: string =
-  "Explore the latest news, tips, and insights from ScrewFast to enhance your construction projects. From product spotlights to project management strategies, our blog is your go-to resource for all things hardware and construction.";
-const secondTitle: string = "Insights";
+  "Descubre las últimas tendencias, consejos y estrategias de diseño web, SEO y marketing digital. Nuestro blog es tu recurso de referencia para hacer crecer tu negocio online.";
+const secondTitle: string = "Artículos Destacados";
 const secondSubTitle: string =
-  "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts. ";
+  "Mantente al día con las últimas tendencias y desarrollos en diseño web y marketing digital con insights de nuestro equipo de expertos.";
 
 const pageTitle: string = `Blog | ${SITE.title}`;
 const metaDescription =
-  "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts.";
-const ogTitle = "Construction Industry Blog | ScrewFast";
+  "Blog de diseño web, SEO y marketing digital. Consejos, estrategias y tendencias para hacer crecer tu negocio online.";
+const ogTitle = "Blog de Diseño Web y Marketing Digital | Artxe Web";
 ---
 
 <MainLayout
@@ -50,19 +50,19 @@ const ogTitle = "Construction Industry Blog | ScrewFast";
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/blog",
-    url: "https://screwfast.uk/blog",
-    name: "Blog | ScrewFast",
+    "@id": "https://artxeweb.com/blog",
+    url: "https://artxeweb.com/blog",
+    name: "Blog | Artxe Web",
     description:
-      "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts.",
+      "Blog de diseño web, SEO y marketing digital. Consejos, estrategias y tendencias para hacer crecer tu negocio online.",
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
+      url: "https://artxeweb.com",
+      name: "Artxe Web",
       description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Artxe Web: diseño y desarrollo de páginas web modernas, rápidas y optimizadas para SEO.",
     },
-    inLanguage: "en-US",
+    inLanguage: "es-ES",
   }}
 >
   <section

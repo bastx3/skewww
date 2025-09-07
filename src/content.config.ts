@@ -61,10 +61,15 @@ const productsCollection = defineCollection({
 });
 
 const blogCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/blog" }),
+  loader: glob({ pattern: '[^_]*.{md,mdx}', base: "./src/content/blog" }),
   schema: ({ image }) => z.object ({
   title: z.string(),
   description: z.string(),
+  metaTitle: z.string().optional(),
+  metaDescription: z.string().optional(),
+  ogImage: image().optional(),
+  noindex: z.boolean().default(false),
+  nofollow: z.boolean().default(false),
   contents: z.array(z.string()),
   author: z.string(),
   role: z.string().optional(),
@@ -89,9 +94,49 @@ const insightsCollection = defineCollection({
   }),
 });
 
+const authorsCollection = defineCollection({
+  loader: glob({ pattern: '[^_]*.{md,mdx}', base: "./src/content/authors" }),
+  schema: ({ image }) => z.object({
+    name: z.string(),
+    bio: z.string(),
+    avatar: image(),
+    avatarAlt: z.string(),
+    role: z.string(),
+    company: z.string().optional(),
+    website: z.string().optional(),
+    twitter: z.string().optional(),
+    linkedin: z.string().optional(),
+    email: z.string().optional(),
+  }),
+});
+
+const projectsCollection = defineCollection({
+  loader: glob({ pattern: '[^_]*.{md,mdx}', base: "./src/content/projects" }),
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    description: z.string(),
+    category: z.string(),
+    client: z.string(),
+    year: z.number(),
+    technologies: z.array(z.string()),
+    url: z.string().optional(),
+    featured: z.boolean().default(false),
+    cardImage: image(),
+    cardImageAlt: z.string(),
+    gallery: z.array(image()).optional(),
+    results: z.object({
+      traffic: z.string().optional(),
+      conversions: z.string().optional(),
+      performance: z.string().optional(),
+    }).optional(),
+  }),
+});
+
 export const collections = {
   docs: defineCollection({ schema: docsSchema() }),
   'products': productsCollection,
   'blog': blogCollection,
+  'authors': authorsCollection,
+  'projects': projectsCollection,
   'insights': insightsCollection,
 };

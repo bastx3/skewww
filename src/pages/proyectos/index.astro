@@ -1,0 +1,157 @@
+// Importing necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import CardProject from "@components/ui/cards/CardProject.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
+
+// Importing necessary functions from Astro
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+// Importing necessary data from the site
+import { SITE } from "@data/constants";
+
+// Fetching all projects and sorting by year and featured status
+const projects: CollectionEntry<"projects">[] = (
+  await getCollection("projects")
+).sort((a, b) => {
+  // Featured projects first, then by year (newest first)
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  return b.data.year - a.data.year;
+});
+
+// Separate featured and regular projects
+const featuredProjects = projects.filter(p => p.data.featured);
+const regularProjects = projects.filter(p => !p.data.featured);
+
+// Get unique categories
+const categories = [...new Set(projects.map(p => p.data.category))];
+
+// Get projects by category
+const projectsByCategory = categories.map(category => ({
+  category,
+  projects: projects.filter(p => p.data.category === category)
+}));
+
+// Define variables for page content
+const title: string = "Nuestros Productos";
+const subTitle: string =
+  "Explora nuestra gama de herramientas de construcción de alta calidad, desde taladros de precisión hasta sierras de corte, diseñadas para satisfacer las necesidades de profesionales y entusiastas del bricolaje.";
+
+// Define the page metadata
+const pageTitle: string = `Productos | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://screwfast.uk/products",
+    "url": "https://screwfast.uk/products",
+    "name": "Hardware Tools | ScrewFast",
+    "description": "Explore our comprehensive range of hardware tools and construction equipment designed to meet the needs of both professionals and DIY enthusiasts.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://screwfast.uk",
+      "name": "ScrewFast",
+      "description": "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+  <div
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+      <div class="flex items-center gap-12">
+        <h1
+          class="text-2xl font-bold tracking-tight text-balance text-neutral-800 md:text-4xl md:leading-tight dark:text-neutral-200"
+        >
+          {title}
+        </h1>
+        {
+          subTitle && (
+            <p class="hidden max-w-(--breakpoint-sm) text-pretty text-neutral-600 md:block dark:text-neutral-400">
+              {subTitle}
+            </p>
+          )
+        }
+      </div>
+      <PrimaryCTA title="Historias de Clientes" url="#testimonials" noArrow={true} />
+    </div>
+    
+    {/* Featured Projects */}
+    {featuredProjects.length > 0 && (
+      <section class="mb-16">
+        <h2 class="mb-8 text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+          Proyectos Destacados
+        </h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featuredProjects.map((project) => (
+            <CardProject project={project} />
+          ))}
+        </div>
+      </section>
+    )}
+    
+    {/* All Projects by Category */}
+    <section class="space-y-12">
+      {projectsByCategory.map(({ category, projects: categoryProjects }) => (
+        <div>
+          <h2 class="mb-6 text-xl font-bold text-neutral-800 dark:text-neutral-200">
+            {category}
+          </h2>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {categoryProjects.map((project) => (
+              <CardProject project={project} />
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+  </div>
+  <!--Features statistics section-->
+  <FeaturesStatsAlt
+    title="¿Por qué elegir ScrewFast?"
+    subTitle="ScrewFast es sinónimo de confiabilidad y calidad en la industria de herramientas de hardware. Nuestros productos están diseñados para durar, asegurando que puedas completar cualquier proyecto con confianza."
+    benefits={[
+      "Herramientas de alta calidad que superan las expectativas de la industria.",
+      "Amplia gama de productos para satisfacer todas las necesidades de construcción.",
+      "Soporte al cliente excepcional y garantías integrales.",
+    ]}
+  />
+  <!--Testimonials section-->
+  <TestimonialsSectionAlt
+    title="Lo que dicen nuestros clientes"
+    testimonials={[
+      {
+        content:
+          "ScrewFast ha transformado mi enfoque hacia los proyectos de construcción. La durabilidad y precisión de sus herramientas son incomparables, y han aumentado significativamente mi eficiencia en el trabajo.",
+        author: "Jason Clark",
+        role: "Contratista de Construcción | TopBuild",
+        avatarSrc:
+          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320",
+      },
+    ]}
+    statistics={[
+      {
+        count: "15k+",
+        description:
+          "proyectos completados exitosamente con herramientas ScrewFast",
+      },
+      {
+        count: "99%",
+        description:
+          "tasa de satisfacción del cliente con nuestros productos y servicios",
+      },
+      {
+        count: "2M+",
+        description:
+          "herramientas vendidas en todo el mundo, confiadas por profesionales",
+      },
+    ]}
+  />
+</MainLayout>
