@@ -7,7 +7,7 @@ year: 2024
 technologies: ["Astro", "Tailwind CSS", "SEO", "Schema Markup"]
 url: "https://bufete-madrid-demo.com"
 featured: true
-cardImage: "@/images/projects/abogados-madrid.avif"
+cardImage: "/imagenes/x.jpg"
 cardImageAlt: "Página web moderna para bufete de abogados"
 results:
   traffic: "+250% tráfico orgánico"
