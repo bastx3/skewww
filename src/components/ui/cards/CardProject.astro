@@ -15,13 +15,12 @@ interface Props {
   data-astro-prefetch
 >
   <div class="relative h-[300px] w-full shrink-0 overflow-hidden rounded-xl">
-    <Image
+    <img
       class="absolute start-0 top-0 size-full object-cover transition duration-500 group-hover:scale-110"
       src={project.data.cardImage}
       alt={project.data.cardImageAlt}
       draggable={"false"}
       loading={"eager"}
-      format={"avif"}
     />
     
     <!-- Overlay gradient -->
