@@ -1,7 +1,7 @@
 ---
 name: "Laura García"
 bio: "Experta en publicidad digital y Google Ads con más de 6 años optimizando campañas para maximizar el ROI. Especializada en estrategias de conversión y análisis de rendimiento."
-avatar: "@/images/blog/laura.avif"
+avatar: "/imagenes/x.png"
 avatarAlt: "Foto de perfil de Laura García"
 role: "Google Ads Specialist"
 company: "Artxe Web"
