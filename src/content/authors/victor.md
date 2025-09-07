@@ -1,7 +1,7 @@
 ---
 name: "Víctor Martínez"
 bio: "Especialista en SEO y marketing digital con más de 8 años de experiencia ayudando a empresas a mejorar su visibilidad online. Apasionado por las estrategias de contenido y el análisis de datos."
-avatar: "/imagenes/x.jpg"
+avatar: "@/images/blog/victor.avif"
 avatarAlt: "Foto de perfil de Víctor Martínez"
 role: "SEO Specialist"
 company: "Artxe Web"
