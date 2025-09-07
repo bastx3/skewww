@@ -86,9 +86,9 @@ const author = authorData.find(a => a.id === post.data.author);
         <div class="flex w-full gap-x-5 sm:items-center sm:gap-x-3">
           {author ? (
             <a href={`/autores/${author.id}`} class="shrink-0">
-              <img
+              <Image
                 class="size-10 rounded-full sm:h-14 sm:w-14"
-                src={author.data.avatar.src}
+                src={author.data.avatar}
                 alt={author.data.avatarAlt}
                 loading="lazy"
               />
