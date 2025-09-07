@@ -10,7 +10,7 @@ author: "victor"
 authorImage: "/imagenes/x.jpg"
 authorImageAlt: "Foto de perfil del autor"
 pubDate: 2024-12-15
-cardImage: "@/images/blog/seo-strategy.avif"
+cardImage: "/imagenes/x.jpg"
 cardImageAlt: "Pantalla con gráficos de posicionamiento SEO"
 readTime: 6
 tags: ["SEO", "estrategia", "posicionamiento web", "marketing digital"]
